@@ -32,27 +32,22 @@ class EWDeviceCard extends LitElement {
         <div class="card-content flex"></div>
 
         <div class="card-actions">
-          <mwc-button
-            label="Logs"
-            @click=${this.showLogs}
-          ></mwc-button>
-          <mwc-button
-            label="Install"
-            @click=${this.showInstall}
-          ></mwc-button>
+          <mwc-button label="Logs" @click=${this.showLogs}></mwc-button>
+          <mwc-button label="Install" @click=${this.showInstall}></mwc-button>
           <mwc-button
             label="Prepare for adoption"
             @click=${this.showAdoptable}
           ></mwc-button>
-          <div class="flex"></div>
-          <esphome-button-menu
-            corner="BOTTOM_RIGHT"
-            @action=${this._handleOverflowAction}
-          >
-            <mwc-icon-button slot="trigger" icon="more_vert"></mwc-icon-button>
-            <mwc-list-item>Configure Wi-Fi</mwc-list-item>
-            <mwc-list-item>Disconnect</mwc-list-item>
-          </esphome-button-menu>
+        </div>
+        <div class="flex"></div>
+        <esphome-button-menu
+          corner="BOTTOM_RIGHT"
+          @action=${this._handleOverflowAction}
+        >
+          <mwc-icon-button slot="trigger" icon="more_vert"></mwc-icon-button>
+          <mwc-list-item>Configure Wi-Fi</mwc-list-item>
+          <mwc-list-item>Disconnect</mwc-list-item>
+        </esphome-button-menu>
       </esphome-card>
     `;
   }
