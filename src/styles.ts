@@ -21,7 +21,7 @@ export const esphomeCardStyles = css`
     text-decoration: none;
   }
   .card-actions mwc-button {
-    --mdc-theme-primary: rgba(0, 0, 0, 0.88);
+    /* --mdc-theme-primary: rgba(0, 0, 0, 0.88); */
   }
   esphome-button-menu {
     color: rgba(0, 0, 0, 0.88);

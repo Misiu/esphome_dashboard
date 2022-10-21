@@ -2,8 +2,15 @@
 
 :root {
   /* Colors */
-  --primary-bg-color: #fafafa;
-  --primary-footer-bg-color: #212121;
+  --esphome-header-color: #e0e0e0;
+  --esphome-background-color: #fafafa;
+  --esphome-footer-color: #212121;
+
+  --mdc-theme-primary: #03a9f4;
+
+  --card-background-color: white;
+
+  --primary-text-color: black;
 
   --alert-standard-color: #666666;
   --alert-standard-color-bg: #e6e6e6;
@@ -16,10 +23,26 @@
   --alert-error-color: #d93025;
   --alert-error-color-bg: #faefeb;
 
-  --mdc-theme-primary: #03a9f4;
   --mdc-dialog-z-index: 998;
+}
 
-  --esphome-background-header: #e0e0e0;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --esphome-header-color: rgba(10, 25, 41, 0.7);
+    --esphome-background-color: rgb(0, 30, 60);
+    --esphome-footer-color: var(--esphome-header-color);
+
+    --mdc-theme-surface: var(--esphome-background-color);
+
+    --mdc-theme-primary: rgb(144, 202, 249);
+
+    --card-background-color: rgb(26, 32, 39);
+
+    --primary-text-color: rgb(178, 186, 194);
+    --mdc-theme-primary: white;
+    --mdc-theme-text-primary-on-background: var(--mdc-theme-primary);
+    --mdc-theme-text-icon-on-background: var(--mdc-theme-primary);
+  }
 }
 
 html {
@@ -35,17 +58,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: var(--primary-bg-color);
+  background-color: var(--esphome-background-color);
   margin: 0;
 }
 
 /* Layout */
-main {
-  margin-top: 64px;
-  flex: 1 0 auto;
-  display: grid;
-}
-
 esphome-main {
   display: flex;
   flex-direction: column;
@@ -53,24 +70,38 @@ esphome-main {
 }
 
 .esphome-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   display: flex;
   align-items: center;
   height: 56px;
-  background-color: var(--esphome-background-header);
+  background-color: var(--esphome-header-color);
   padding: 0 24px;
-}
-
-.flex {
-  flex: 1;
 }
 
 .esphome-header img {
   width: auto;
   height: 48px;
+}
+
+main {
+  flex: 1 0 auto;
+  display: grid;
+}
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding-top: 0;
+  color: grey;
+  background-color: var(--esphome-footer-color);
+}
+
+.page-footer a {
+  color: #afafaf;
+}
+
+.flex {
+  flex: 1;
 }
 
 #js-loading-indicator {
@@ -121,19 +152,6 @@ ul.browser-default li {
 }
 .modal .modal-footer mwc-button {
   margin: 6px 0;
-}
-
-.page-footer {
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  padding-top: 0;
-  color: grey;
-  background-color: var(--primary-footer-bg-color);
-}
-
-.page-footer a {
-  color: #afafaf;
 }
 
 @media only screen and (min-width: 993px) {

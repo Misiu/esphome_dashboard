@@ -131,7 +131,7 @@ class ESPHomeDevicesList extends LitElement {
       margin-bottom: 16px;
     }
     mwc-button {
-      --mdc-theme-primary: #4caf50;
+      /* --mdc-theme-primary: #4caf50; */
     }
   `;
 
