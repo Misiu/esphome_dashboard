@@ -240,7 +240,7 @@ export class ESPHomeInstallWebDialog extends LitElement {
         return;
       }
 
-      await esploader.after();
+      await esploader.hardReset();
       this._state = "done";
     } finally {
       console.log("Closing port");
